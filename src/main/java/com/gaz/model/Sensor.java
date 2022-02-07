@@ -1,21 +1,22 @@
-package model;
+package com.gaz.model;
 
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.GenerationType.TABLE;
 
 @Entity
 @Table(name = "sensors")
 public class Sensor {
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @GeneratedValue(strategy = TABLE)
     @Column(name = "id", unique = true)
     private Long id;
     @Column(name = "short_name", length = 15)
     private String name;
-    @JoinColumn(name = "controller_id", referencedColumnName = "controller_id")
-    @ManyToOne
-    private ArduinoController controllerId;
+   @JoinColumn(name = "controller_id", referencedColumnName = "controller_id")
+    @Column(name = "controller_id")
+    private String controllerId;
 
     public Sensor() {
     }
@@ -36,11 +37,11 @@ public class Sensor {
         this.name = name;
     }
 
-    public ArduinoController getControllerId() {
+    public String getControllerId() {
         return controllerId;
     }
 
-    public void setControllerId(ArduinoController controllerId) {
+    public void setControllerId(String controllerId) {
         this.controllerId = controllerId;
     }
 

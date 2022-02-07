@@ -1,21 +1,22 @@
-package model;
+package com.gaz.model;
 
 import javax.persistence.*;
 
 import java.util.Date;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.GenerationType.TABLE;
 
 @Entity
 @Table(name = "conditions")
 public class Condition {
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @GeneratedValue(strategy = TABLE)
     @Column(name = "id", unique = true)
     private Long id;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "timestamp", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+   // @Temporal(TemporalType.TIMESTAMP)
+   //@GeneratedValue(strategy = TABLE)
+    //@Column(name = "timestamp")
     Date timestamp;
 
     @Column(name = "values")
@@ -27,9 +28,9 @@ public class Condition {
     @Column(name = "sensor_name", length = 12)
     String sensorName;
 
-    @ManyToOne
     @JoinColumn(name = "controller_id", referencedColumnName = "controller_id")
-    ArduinoController controllerId;
+    @Column
+    String controllerId;
 
 
     public Condition() {
@@ -75,11 +76,11 @@ public class Condition {
         this.sensorName = sensorName;
     }
 
-    public ArduinoController getControllerId() {
+    public String getControllerId() {
         return controllerId;
     }
 
-    public void setControllerId(ArduinoController controllerId) {
+    public void setControllerId(String controllerId) {
         this.controllerId = controllerId;
     }
 

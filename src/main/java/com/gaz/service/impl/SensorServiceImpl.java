@@ -1,10 +1,10 @@
-package service.impl;
+package com.gaz.service.impl;
 
-import model.Sensor;
+import com.gaz.model.Sensor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.SensorRepository;
-import service.SensorService;
+import com.gaz.repository.SensorRepository;
+import com.gaz.service.SensorService;
 
 import java.util.List;
 

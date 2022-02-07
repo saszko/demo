@@ -1,10 +1,10 @@
-package service.impl;
+package com.gaz.service.impl;
 
-import model.ArduinoController;
+import com.gaz.model.ArduinoController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.AdruinoControllerRepository;
-import service.ArduinoControllerService;
+import com.gaz.repository.AdruinoControllerRepository;
+import com.gaz.service.ArduinoControllerService;
 
 import java.util.List;
 

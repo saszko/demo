@@ -1,6 +1,6 @@
-package service;
+package com.gaz.service;
 
-import model.ArduinoController;
+import com.gaz.model.ArduinoController;
 
 import java.util.List;
 

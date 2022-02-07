@@ -1,14 +1,13 @@
-package model;
+package com.gaz.model;
 
-import jdk.jfr.DataAmount;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 import java.util.List;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "controllers")
 public class ArduinoController {
     @Id
@@ -24,6 +23,17 @@ public class ArduinoController {
     private String longitude;
     @Transient
     private List<Sensor> sensorList;
+
+    public ArduinoController(String controllerId, String name, String locationDescription, String latitude, String longitude) {
+        this.controllerId = controllerId;
+        this.name = name;
+        this.locationDescription = locationDescription;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public ArduinoController() {
+    }
 
     public String getControllerId() {
         return controllerId;

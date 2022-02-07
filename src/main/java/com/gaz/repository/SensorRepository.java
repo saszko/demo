@@ -1,8 +1,7 @@
-package repository;
+package com.gaz.repository;
 
-import model.Sensor;
+import com.gaz.model.Sensor;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 
 
 public interface SensorRepository extends JpaRepository<Sensor, Long> {
