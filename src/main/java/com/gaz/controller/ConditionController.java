@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-@RequestMapping(value = "condition")
+//@RestController
+//@RequestMapping(value = "condition")
 public class ConditionController {
-    ConditionServiceImpl service;
+   /* ConditionServiceImpl service;
 
     @Autowired
     public  void setConditionService(ConditionServiceImpl conditionService){
@@ -32,5 +32,5 @@ public class ConditionController {
     public List<Condition> addAllCondition(@RequestBody List<Condition> condition) {
         service.addAll(condition);
         return condition;
-    }
+    }*/
 }

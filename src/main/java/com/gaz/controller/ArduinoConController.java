@@ -7,10 +7,10 @@ import com.gaz.service.ArduinoControllerService;
 import com.gaz.service.impl.ArduinoControllerServiceImpl;
 
 
-@RestController
-@RequestMapping("plate")
+//@RestController
+//@RequestMapping("plate")
 public class ArduinoConController {
-    ArduinoControllerService service;
+  /*  ArduinoControllerService service;
 
     @Autowired
     public void setService(ArduinoControllerServiceImpl service) {
@@ -22,5 +22,5 @@ public class ArduinoConController {
        service.addController(conn);
         System.out.println("plates in db");
         return conn;
-    }
+    }*/
 }

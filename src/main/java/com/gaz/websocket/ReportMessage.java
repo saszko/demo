@@ -1,9 +1,10 @@
 package com.gaz.websocket;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gaz.model.Condition;
 
+import javax.persistence.Entity;
 import java.util.List;
-
 public class ReportMessage {
     String controllerId;
     List<Condition> conditionList;

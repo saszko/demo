@@ -1,17 +1,26 @@
 package com.gaz.websocket;
 
-public class TestMessage {
-    String message;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-    public TestMessage(String message) {
-        this.message = message;
+import javax.persistence.Entity;
+
+
+public class TestMessage {
+    @JsonProperty
+    String name;
+
+    public TestMessage(String name) {
+        this.name = name;
+    }
+
+    public TestMessage() {
     }
 
     public String getMessage() {
-        return message;
+        return name;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessage(String name) {
+        this.name = name;
     }
 }

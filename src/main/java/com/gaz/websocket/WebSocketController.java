@@ -29,9 +29,9 @@ public class WebSocketController {
     }
     Map<String, WebSocketSession> sessionMap = new ConcurrentHashMap<>();
 
-    @MessageMapping("/hellol")
-    public void addConditions(ReportMessage message, WebSocketSession session) throws Exception {
-        sessionMap.put(message.getControllerId(), session);
+    @MessageMapping("/hellohhh")
+    public void addConditions(ReportMessage message) throws Exception {
+        //sessionMap.put(message.getControllerId(), session);
         List<Condition> conditionList = message.getConditionList()
                 .stream()
                 .map(c -> new Condition(c.getValue(), c.getMetricUnit(), c.getSensorName(), message.getControllerId()))
@@ -50,7 +50,8 @@ public class WebSocketController {
 
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
-    public Greeting greeting(TestMessage message) throws Exception {
+    public Greeting greeting(TestMessage message, WebSocketSession session) throws Exception {
+        sessionMap.put("message", session);
         Thread.sleep(3000); // simulated delay
         return new Greeting("Hello, " + message.getMessage() + "!");
     }
