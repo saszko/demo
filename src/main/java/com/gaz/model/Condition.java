@@ -36,6 +36,13 @@ public class Condition {
     public Condition() {
     }
 
+    public Condition(float value, String metricUnit, String sensorName, String controllerId) {
+        this.value = value;
+        this.metricUnit = metricUnit;
+        this.sensorName = sensorName;
+        this.controllerId = controllerId;
+    }
+
     public Long getId() {
         return id;
     }
